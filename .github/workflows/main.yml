@@ -20,7 +20,8 @@ jobs:
         run: npm install
 
       - name: Build project for GitHub Pages
-        run: cp .env.github .env.production |
+        run: |
+          cp .env.github .env.production 
           npm run build
 
       - name: Deploy
