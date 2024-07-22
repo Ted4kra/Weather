@@ -20,8 +20,8 @@ jobs:
 
       - name: Configure GitHub Pages
         run: |
-          cp .env.github .env.production
-          cat .env.production
+          cp .env.github .env
+          cat .env
 
       - name: Build project for GitHub Pages
         run: npm run build

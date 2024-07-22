@@ -1,10 +1,16 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
+import dotenv from "dotenv";
+
+// 加载 .env 文件
+dotenv.config();
+
+console.log("VITE_BASE_PATH:", process.env.VITE_BROWER_PATH);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || "/",
+  base: process.env.VITE_BROWER_PATH || "/",
   server: {
     open: true,
     hmr: {
