@@ -6,11 +6,11 @@ import dotenv from "dotenv";
 // 加载 .env 文件
 dotenv.config();
 
-console.log("VITE_BASE_PATH:", process.env.VITE_BROWER_PATH);
+console.log("VITE_BASE_PATH:", process.env.VITE_BROWSER_PATH);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.VITE_BROWER_PATH || "/",
+  base: process.env.VITE_BROWSER_PATH || "/",
   server: {
     open: true,
     hmr: {
