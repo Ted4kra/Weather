@@ -22,6 +22,7 @@ jobs:
       - name: Build project for GitHub Pages
         run: |
           cp .env.github .env 
+          cat .env
           npm run build
 
       - name: Deploy
