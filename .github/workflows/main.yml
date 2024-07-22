@@ -1,10 +1,9 @@
-# 以下以一个构建vue项目的yml文件为例子
 name: CI
 
 on:
   push:
     branches:
-      - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,11 +18,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build project for GitHub Pages
+      - name: Configure GitHub Pages
         run: |
-          cp .env.github .env 
-          cat .env
-          npm run build
+          cp .env.github .env.production
+          cat .env.production
+
+      - name: Build project for GitHub Pages
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
